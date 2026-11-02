@@ -1,0 +1,17 @@
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Infrastructure.deps.json
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Infrastructure.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Infrastructure.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Application.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Domain.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Application.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/bin/Debug/net10.0/ZenithAssets.Domain.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.csproj.AssemblyReference.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.AssemblyInfoInputs.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.AssemblyInfo.cs
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAs.46E1CECA.Up2Date
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/refint/ZenithAssets.Infrastructure.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ref/ZenithAssets.Infrastructure.dll

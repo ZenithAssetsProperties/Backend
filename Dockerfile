@@ -50,3 +50,4 @@ HEALTHCHECK --interval=15s --timeout=5s --start-period=10s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:5000/health/live || exit 1
 
 ENTRYPOINT ["dotnet", "ZenithAssets.WebApi.dll"]
+

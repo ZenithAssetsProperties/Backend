@@ -3656,7 +3656,7 @@
     ]
   },
   "packageFolders": {
-    "/tmp/.nuget/packages/": {}
+    "/Users/testapp/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3664,11 +3664,11 @@
       "projectUniqueName": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/ZenithAssets.WebApi.csproj",
       "projectName": "ZenithAssets.WebApi",
       "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/ZenithAssets.WebApi.csproj",
-      "packagesPath": "/tmp/.nuget/packages/",
+      "packagesPath": "/Users/testapp/.nuget/packages/",
       "outputPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/tmp/.nuget/NuGet/NuGet.Config"
+        "/Users/testapp/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"

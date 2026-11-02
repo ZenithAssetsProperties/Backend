@@ -52,7 +52,7 @@ public static class DependencyInjection
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
         services.AddScoped<ICacheService, RedisCacheService>();
         services.AddScoped<IDistributedLockService, DistributedLockService>();
-        services.AddScoped<IPaymentGatewayService, PaystackGatewayService>();
+        services.AddHttpClient<IPaymentGatewayService, PaystackGatewayService>();
         services.AddScoped<IStorageService, SecureStorageService>();
         services.AddScoped<INotificationService, MultiChannelNotificationService>();
 

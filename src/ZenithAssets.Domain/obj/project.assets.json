@@ -8,7 +8,7 @@
     "net10.0": []
   },
   "packageFolders": {
-    "/Users/testapp/.nuget/packages/": {}
+    "/tmp/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,11 +16,11 @@
       "projectUniqueName": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/ZenithAssets.Domain.csproj",
       "projectName": "ZenithAssets.Domain",
       "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/ZenithAssets.Domain.csproj",
-      "packagesPath": "/Users/testapp/.nuget/packages/",
+      "packagesPath": "/tmp/.nuget/packages/",
       "outputPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/testapp/.nuget/NuGet/NuGet.Config"
+        "/tmp/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"

@@ -1,5 +1,7 @@
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ZenithAssets.Application.Common.Interfaces;
@@ -8,16 +10,21 @@ namespace ZenithAssets.Infrastructure.Payments;
 
 public class PaystackGatewayService : IPaymentGatewayService
 {
+    private readonly HttpClient _httpClient;
     private readonly IConfiguration _configuration;
     private readonly ILogger<PaystackGatewayService> _logger;
 
-    public PaystackGatewayService(IConfiguration configuration, ILogger<PaystackGatewayService> logger)
+    public PaystackGatewayService(
+        HttpClient httpClient,
+        IConfiguration configuration,
+        ILogger<PaystackGatewayService> logger)
     {
+        _httpClient = httpClient;
         _configuration = configuration;
         _logger = logger;
     }
 
-    public Task<InitializePaymentResult> InitializePaymentAsync(
+    public async Task<InitializePaymentResult> InitializePaymentAsync(
         string email,
         decimal amount,
         string currency,
@@ -27,20 +34,69 @@ public class PaystackGatewayService : IPaymentGatewayService
         CancellationToken cancellationToken = default)
     {
         var secretKey = _configuration["Paystack:SecretKey"];
+        if (string.IsNullOrWhiteSpace(secretKey))
+        {
+            _logger.LogError("Paystack SecretKey is not configured. Please supply PAYSTACK__SECRETKEY.");
+            return new InitializePaymentResult(false, reference, string.Empty, "Payment gateway configuration is missing.");
+        }
 
-        _logger.LogInformation("Initializing Paystack payment: Ref={Reference}, Amount={Amount} {Currency}, Email={Email}",
-            reference, amount, currency, email);
+        try
+        {
+            // Paystack amounts are in the subunit of the currency (e.g. Kobo for NGN: amount * 100)
+            var amountInSubunits = (long)(amount * 100);
 
-        // Production returns direct checkout link from Paystack API
-        // For testing / developer environment:
-        var checkoutUrl = $"https://checkout.paystack.com/{reference}";
-        return Task.FromResult(new InitializePaymentResult(true, reference, checkoutUrl));
+            var payload = new
+            {
+                email,
+                amount = amountInSubunits,
+                currency = currency.ToUpperInvariant(),
+                reference,
+                callback_url = callbackUrl,
+                metadata
+            };
+
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://api.paystack.co/transaction/initialize")
+            {
+                Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json")
+            };
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", secretKey);
+
+            var response = await _httpClient.SendAsync(request, cancellationToken);
+            var responseJson = await response.Content.ReadAsStringAsync(cancellationToken);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError("Paystack API call failed with status {StatusCode}: {Response}", response.StatusCode, responseJson);
+                return new InitializePaymentResult(false, reference, string.Empty, $"Paystack rejected request: {response.StatusCode}");
+            }
+
+            using var doc = JsonDocument.Parse(responseJson);
+            var root = doc.RootElement;
+            var status = root.GetProperty("status").GetBoolean();
+
+            if (!status)
+            {
+                var message = root.TryGetProperty("message", out var msgProp) ? msgProp.GetString() : "Unknown error";
+                return new InitializePaymentResult(false, reference, string.Empty, message);
+            }
+
+            var data = root.GetProperty("data");
+            var authUrl = data.GetProperty("authorization_url").GetString()!;
+
+            _logger.LogInformation("Paystack payment initialized successfully: Ref={Reference}, Url={AuthUrl}", reference, authUrl);
+            return new InitializePaymentResult(true, reference, authUrl);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Exception while initializing Paystack payment for reference {Reference}", reference);
+            return new InitializePaymentResult(false, reference, string.Empty, ex.Message);
+        }
     }
 
     public bool VerifyWebhookSignature(string payload, string signature)
     {
-        var secretKey = _configuration["Paystack:SecretKey"] ?? "sk_test_zenith_mock_secret_key";
-        if (string.IsNullOrWhiteSpace(signature) || string.IsNullOrWhiteSpace(payload))
+        var secretKey = _configuration["Paystack:SecretKey"];
+        if (string.IsNullOrWhiteSpace(secretKey) || string.IsNullOrWhiteSpace(signature) || string.IsNullOrWhiteSpace(payload))
         {
             return false;
         }
@@ -57,4 +113,3 @@ public class PaystackGatewayService : IPaymentGatewayService
             Encoding.UTF8.GetBytes(signature.ToLowerInvariant()));
     }
 }
-

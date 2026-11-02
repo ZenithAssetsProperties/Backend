@@ -10,11 +10,11 @@
         "projectUniqueName": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/ZenithAssets.Application.csproj",
         "projectName": "ZenithAssets.Application",
         "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/ZenithAssets.Application.csproj",
-        "packagesPath": "/Users/testapp/.nuget/packages/",
+        "packagesPath": "/tmp/.nuget/packages/",
         "outputPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/testapp/.nuget/NuGet/NuGet.Config"
+          "/tmp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -369,11 +369,11 @@
         "projectUniqueName": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/ZenithAssets.Domain.csproj",
         "projectName": "ZenithAssets.Domain",
         "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/ZenithAssets.Domain.csproj",
-        "packagesPath": "/Users/testapp/.nuget/packages/",
+        "packagesPath": "/tmp/.nuget/packages/",
         "outputPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/testapp/.nuget/NuGet/NuGet.Config"
+          "/tmp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -702,11 +702,11 @@
         "projectUniqueName": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/ZenithAssets.Infrastructure.csproj",
         "projectName": "ZenithAssets.Infrastructure",
         "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/ZenithAssets.Infrastructure.csproj",
-        "packagesPath": "/Users/testapp/.nuget/packages/",
+        "packagesPath": "/tmp/.nuget/packages/",
         "outputPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/testapp/.nuget/NuGet/NuGet.Config"
+          "/tmp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

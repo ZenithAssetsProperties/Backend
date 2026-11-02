@@ -1,0 +1,12 @@
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/bin/Release/net10.0/ZenithAssets.Domain.deps.json
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/bin/Release/net10.0/ZenithAssets.Domain.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/bin/Release/net10.0/ZenithAssets.Domain.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.AssemblyInfoInputs.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.AssemblyInfo.cs
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.csproj.CoreCompileInputs.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.sourcelink.json
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/refint/ZenithAssets.Domain.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ZenithAssets.Domain.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Release/net10.0/ref/ZenithAssets.Domain.dll

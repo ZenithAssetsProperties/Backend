@@ -139,3 +139,4 @@ public class TransactionConfiguration : IEntityTypeConfiguration<Transaction>
         builder.HasQueryFilter(t => !t.IsDeleted);
     }
 }
+

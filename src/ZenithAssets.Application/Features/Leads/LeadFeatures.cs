@@ -43,3 +43,4 @@ public class CaptureLeadCommandHandler : IRequestHandler<CaptureLeadCommand, Res
         return Result<Guid>.Success(lead.Id);
     }
 }
+

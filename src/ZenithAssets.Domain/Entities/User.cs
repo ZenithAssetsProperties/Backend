@@ -98,3 +98,4 @@ public sealed class User : AuditableEntity<Guid>
         Role = newRole;
     }
 }
+

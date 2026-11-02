@@ -82,3 +82,4 @@ public class PerformanceBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
         return response;
     }
 }
+

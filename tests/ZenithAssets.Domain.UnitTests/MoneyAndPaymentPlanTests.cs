@@ -78,3 +78,4 @@ public class MoneyAndPaymentPlanTests
         Assert.Equal(PropertyStatus.ReservedConfirmed, property.Status);
     }
 }
+

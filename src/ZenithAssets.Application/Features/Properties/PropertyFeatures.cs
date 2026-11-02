@@ -341,3 +341,4 @@ public class CreatePropertyCommandHandler : IRequestHandler<CreatePropertyComman
         return Result<Guid>.Success(property.Id);
     }
 }
+

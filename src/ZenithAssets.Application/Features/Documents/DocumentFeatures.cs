@@ -150,3 +150,4 @@ public class GetSecureDocumentUrlQueryHandler : IRequestHandler<GetSecureDocumen
         return Result<string>.Success(preSignedUrl);
     }
 }
+

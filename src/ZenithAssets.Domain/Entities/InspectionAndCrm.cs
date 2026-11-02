@@ -180,3 +180,4 @@ public sealed class AuditLog : BaseEntity<long>
         };
     }
 }
+

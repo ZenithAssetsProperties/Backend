@@ -178,3 +178,4 @@ public sealed class PropertyMedia : AuditableEntity<Guid>
         };
     }
 }
+

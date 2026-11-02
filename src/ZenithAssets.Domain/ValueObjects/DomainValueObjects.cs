@@ -114,3 +114,4 @@ public sealed class GeoCoordinate : ValueObject
         yield return IsPubliclyExposed;
     }
 }
+

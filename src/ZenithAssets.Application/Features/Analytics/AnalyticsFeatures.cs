@@ -71,3 +71,4 @@ public class GetExecutiveAnalyticsQueryHandler : IRequestHandler<GetExecutiveAna
         return Result<ExecutiveAnalyticsDto>.Success(dto);
     }
 }
+

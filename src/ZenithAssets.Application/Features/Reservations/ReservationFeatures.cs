@@ -191,3 +191,4 @@ public class GetMyReservationsQueryHandler : IRequestHandler<GetMyReservationsQu
         return Result<List<ReservationSummaryDto>>.Success(items);
     }
 }
+

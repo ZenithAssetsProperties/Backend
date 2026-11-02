@@ -86,3 +86,4 @@ public interface INotificationService
     Task SendSmsAsync(string toPhoneNumber, string message, CancellationToken cancellationToken = default);
     Task SendWhatsAppMessageAsync(string toPhoneNumber, string messageText, CancellationToken cancellationToken = default);
 }
+

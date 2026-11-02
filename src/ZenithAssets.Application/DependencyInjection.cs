@@ -42,3 +42,4 @@ public class UnhandledExceptionBehavior<TRequest, TResponse> : IPipelineBehavior
         }
     }
 }
+

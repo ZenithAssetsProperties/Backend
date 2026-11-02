@@ -131,3 +131,4 @@ public sealed class PaymentPlan : AuditableEntity<Guid>
         LastModifiedAtUtc = DateTime.UtcNow;
     }
 }
+

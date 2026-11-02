@@ -116,3 +116,4 @@ public sealed class DocumentAccessRequest : AuditableEntity<Guid>
         return Status == DocumentAccessStatus.Approved && (!ExpiresAtUtc.HasValue || ExpiresAtUtc.Value > DateTime.UtcNow);
     }
 }
+

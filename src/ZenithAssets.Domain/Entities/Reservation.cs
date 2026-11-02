@@ -68,3 +68,4 @@ public sealed class Reservation : AuditableEntity<Guid>
 
     public bool IsExpired() => Status == ReservationStatus.PendingPayment && DateTime.UtcNow > ExpiresAtUtc;
 }
+

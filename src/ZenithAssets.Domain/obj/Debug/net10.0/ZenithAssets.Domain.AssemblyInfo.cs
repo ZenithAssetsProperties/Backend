@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZenithAssets.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7753f268f085105405ab1afdcc077424ef948fbd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06ab215ebfbe8bf5fb6664ad06b666bbc0e2824c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZenithAssets.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZenithAssets.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

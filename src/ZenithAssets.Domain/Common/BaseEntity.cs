@@ -38,3 +38,4 @@ public abstract class AuditableEntity<TId> : BaseEntity<TId>
     public DateTime? DeletedAtUtc { get; set; }
     public string? DeletedBy { get; set; }
 }
+

@@ -96,3 +96,4 @@ public class BookInspectionCommandHandler : IRequestHandler<BookInspectionComman
         return Result<Guid>.Success(inspection.Id);
     }
 }
+

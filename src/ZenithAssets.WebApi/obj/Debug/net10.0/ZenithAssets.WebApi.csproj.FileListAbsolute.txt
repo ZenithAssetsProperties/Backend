@@ -14,7 +14,6 @@
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/MediatR.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/MediatR.Contracts.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/Microsoft.Bcl.Cryptography.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/Microsoft.Build.Framework.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.WebApi/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll

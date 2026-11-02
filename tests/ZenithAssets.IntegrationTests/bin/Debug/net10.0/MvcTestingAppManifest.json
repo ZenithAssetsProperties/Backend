@@ -1,0 +1,6 @@
+{
+  "ZenithAssets.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/testapp\/Documents\/TechDev\/ZenithAssetsProperties\/Backend\/src\/ZenithAssets.Application",
+  "ZenithAssets.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/testapp\/Documents\/TechDev\/ZenithAssetsProperties\/Backend\/src\/ZenithAssets.Domain",
+  "ZenithAssets.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/testapp\/Documents\/TechDev\/ZenithAssetsProperties\/Backend\/src\/ZenithAssets.Infrastructure",
+  "ZenithAssets.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/testapp\/Documents\/TechDev\/ZenithAssetsProperties\/Backend\/src\/ZenithAssets.WebApi"
+}

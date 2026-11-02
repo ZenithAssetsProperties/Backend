@@ -69,3 +69,4 @@ public class AuthAndReservationTests
         Assert.Contains("must be authenticated", result.Error);
     }
 }
+

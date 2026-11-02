@@ -1,0 +1,76 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zenith_backend_api
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000
+      - CONNECTIONSTRINGS__DEFAULTCONNECTION=Host=postgres;Port=5432;Database=zenith_assets_db;Username=zenith_admin;Password=zenith_secure_password_2026;
+      - CONNECTIONSTRINGS__REDIS=redis:6379,password=zenith_redis_secret,abortConnect=false
+      - JWT__SECRETKEY=Zenith_Assets_Super_Secret_Key_2026_Enterprise_Edition_Must_Be_Long_And_Secure
+      - JWT__ISSUER=ZenithAssets.Api
+      - JWT__AUDIENCE=ZenithAssets.Clients
+      - STORAGE__BASEURL=https://storage.zenithassets.ng
+      - STORAGE__SIGNINGSECRET=Zenith_Storage_Vault_Secret_2026
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5000/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - zenith_network
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: zenith_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: zenith_admin
+      POSTGRES_PASSWORD: zenith_secure_password_2026
+      POSTGRES_DB: zenith_assets_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zenith_admin -d zenith_assets_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - zenith_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: zenith_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass zenith_redis_secret
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "zenith_redis_secret", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - zenith_network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  zenith_network:
+    driver: bridge

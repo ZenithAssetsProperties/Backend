@@ -1,8 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "O0h63n0FK98=",
+  "dgSpecHash": "5d9zgbpP5k4=",
   "success": true,
   "projectFilePath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/ZenithAssets.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/tmp/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/tmp/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.11.0/fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
+    "/tmp/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
+    "/tmp/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.entityframeworkcore/10.0.4/microsoft.entityframeworkcore.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.4/microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.4/microsoft.entityframeworkcore.analyzers.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.4/microsoft.extensions.caching.abstractions.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.caching.memory/10.0.4/microsoft.extensions.caching.memory.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.4/microsoft.extensions.dependencyinjection.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.4/microsoft.extensions.dependencyinjection.abstractions.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.logging/10.0.4/microsoft.extensions.logging.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.4/microsoft.extensions.logging.abstractions.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.options/10.0.4/microsoft.extensions.options.10.0.4.nupkg.sha512",
+    "/tmp/.nuget/packages/microsoft.extensions.primitives/10.0.4/microsoft.extensions.primitives.10.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

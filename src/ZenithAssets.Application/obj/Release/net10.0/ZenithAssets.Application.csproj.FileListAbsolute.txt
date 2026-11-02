@@ -1,0 +1,16 @@
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/bin/Release/net10.0/ZenithAssets.Application.deps.json
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/bin/Release/net10.0/ZenithAssets.Application.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/bin/Release/net10.0/ZenithAssets.Application.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/bin/Release/net10.0/ZenithAssets.Domain.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/bin/Release/net10.0/ZenithAssets.Domain.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.csproj.AssemblyReference.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.AssemblyInfoInputs.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.AssemblyInfo.cs
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.csproj.CoreCompileInputs.cache
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.sourcelink.json
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAs.07CE0C51.Up2Date
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/refint/ZenithAssets.Application.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ZenithAssets.Application.pdb
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Release/net10.0/ref/ZenithAssets.Application.dll

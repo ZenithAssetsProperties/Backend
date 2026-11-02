@@ -1,0 +1,32 @@
+## Ignore Visual Studio & .NET temporary / build artifacts
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test and coverage results
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+coverage/
+
+# Environment files
+.env
+.env.*
+!.env.example
+

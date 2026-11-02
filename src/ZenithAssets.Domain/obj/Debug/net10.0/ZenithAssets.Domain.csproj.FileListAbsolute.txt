@@ -9,3 +9,4 @@
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Debug/net10.0/refint/ZenithAssets.Domain.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Debug/net10.0/ZenithAssets.Domain.pdb
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Debug/net10.0/ref/ZenithAssets.Domain.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/obj/Debug/net10.0/ZenithAssets.Domain.sourcelink.json

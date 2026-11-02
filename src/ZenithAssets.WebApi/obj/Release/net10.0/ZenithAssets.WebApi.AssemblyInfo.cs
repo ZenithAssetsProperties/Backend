@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZenithAssets.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e372e8e873d7e754c548f19c06cffe3e2bdc2c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87871f69e919ea84bc755a877e24bbe70e81908c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZenithAssets.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZenithAssets.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

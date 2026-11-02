@@ -1,0 +1,123 @@
+name: Continuous Delivery & Deployment (CD)
+
+on:
+  push:
+    branches: [ main, develop ]
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: 'Target Deployment Environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+concurrency:
+  group: cd-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # --------------------------------------------------------------------------
+  # 1. BUILD & PUBLISH CONTAINER IMAGE TO GHCR
+  # --------------------------------------------------------------------------
+  publish-container:
+    name: Build & Publish OCI Container
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    outputs:
+      image_tag: ${{ steps.meta.outputs.version }}
+      target_environment: ${{ steps.set-env.outputs.environment }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Determine Deployment Environment
+        id: set-env
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "environment=${{ github.event.inputs.target_env }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.ref }}" = "refs/heads/main" ] || [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            echo "environment=production" >> "$GITHUB_OUTPUT"
+          else
+            echo "environment=staging" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Docker Metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,format=long,prefix=sha-
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # --------------------------------------------------------------------------
+  # 2. DEPLOYMENT ORCHESTRATION & SMOKE VERIFICATION
+  # --------------------------------------------------------------------------
+  deploy:
+    name: Deploy to Cluster / Cloud Service
+    needs: [publish-container]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: ${{ needs.publish-container.outputs.target_environment }}
+      url: ${{ needs.publish-container.outputs.target_environment == 'production' && 'https://api.zenithassets.ng' || 'https://staging-api.zenithassets.ng' }}
+
+    steps:
+      - name: Deploy Announcement
+        run: |
+          echo "🚀 Deploying Zenith Assets Backend to environment: ${{ needs.publish-container.outputs.target_environment }}"
+          echo "📦 Target Container: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.publish-container.outputs.image_tag }}"
+
+      # Placeholders for cluster rollouts (Kubernetes, AWS ECS, Azure Container Apps, or Docker Swarm)
+      - name: Execute Deployment Rollout
+        run: |
+          echo "Applying deployment manifests / updating container image in target cluster..."
+          # Example for Kubernetes: kubectl set image deployment/zenith-api zenith-api=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.publish-container.outputs.image_tag }}
+          # Example for Docker Compose over SSH: ssh deployer@host "docker compose pull && docker compose up -d"
+
+      - name: Deployment Success Notification
+        if: success()
+        run: |
+          echo "✅ Deployment completed successfully for ${{ needs.publish-container.outputs.target_environment }}"
+

@@ -13,3 +13,4 @@
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Debug/net10.0/refint/ZenithAssets.Application.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Debug/net10.0/ZenithAssets.Application.pdb
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Debug/net10.0/ref/ZenithAssets.Application.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/obj/Debug/net10.0/ZenithAssets.Application.sourcelink.json

@@ -15,3 +15,4 @@
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/refint/ZenithAssets.Infrastructure.dll
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.pdb
 /Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ref/ZenithAssets.Infrastructure.dll
+/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Infrastructure/obj/Debug/net10.0/ZenithAssets.Infrastructure.sourcelink.json

@@ -47,6 +47,20 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -698,6 +712,9 @@
             "projectReferences": {
               "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/ZenithAssets.Application.csproj": {
                 "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Application/ZenithAssets.Application.csproj"
+              },
+              "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/ZenithAssets.Domain.csproj": {
+                "projectPath": "/Users/testapp/Documents/TechDev/ZenithAssetsProperties/Backend/src/ZenithAssets.Domain/ZenithAssets.Domain.csproj"
               }
             }
           }
@@ -717,6 +734,36 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Konscious.Security.Cryptography.Argon2": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[10.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[10.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.16, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.19.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

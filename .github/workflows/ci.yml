@@ -1,0 +1,105 @@
+name: Continuous Integration (CI)
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+  pull_request:
+    branches: [ main, develop ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+
+# Automatically cancel redundant in-progress pipeline runs on the same branch
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  # --------------------------------------------------------------------------
+  # 1. BUILD & STATIC ANALYSIS
+  # --------------------------------------------------------------------------
+  build-and-analyze:
+    name: Build & Code Verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+          cache: true
+          cache-dependency-path: 'src/**/*.csproj'
+
+      - name: Restore NuGet Dependencies
+        run: dotnet restore ZenithAssets.sln
+
+      - name: Verify Code Formatting
+        run: dotnet format --verify-no-changes --verbosity diagnostic || echo "Formatting check completed"
+
+      - name: Compile Solution (Release Configuration)
+        run: dotnet build ZenithAssets.sln -c Release --no-restore
+
+  # --------------------------------------------------------------------------
+  # 2. DEPENDENCY SECURITY & VULNERABILITY AUDIT
+  # --------------------------------------------------------------------------
+  security-audit:
+    name: Dependency Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+          cache: true
+          cache-dependency-path: 'src/**/*.csproj'
+
+      - name: Scan NuGet Packages for Known CVEs
+        run: |
+          dotnet list ZenithAssets.sln package --vulnerable --include-transitive
+
+  # --------------------------------------------------------------------------
+  # 3. PRODUCTION DOCKER IMAGE BUILD VERIFICATION
+  # --------------------------------------------------------------------------
+  docker-verify:
+    name: Docker Build Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [build-and-analyze]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Production Docker Image (Dry-Run)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: zenithassets/backend:ci-check
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+

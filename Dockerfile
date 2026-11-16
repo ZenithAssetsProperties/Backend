@@ -26,7 +26,7 @@ RUN dotnet publish ZenithAssets.WebApi.csproj -c Release -o /app/publish \
     /p:UseAppHost=false
 
 # Stage 2: Runtime Image (Hardened, Minimal Alpine Linux)
-FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:11.0-alpine AS runtime
 WORKDIR /app
 
 # Configure ASP.NET Core environment for production
